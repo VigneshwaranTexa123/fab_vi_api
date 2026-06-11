@@ -35,3 +35,27 @@ export const getMachinePerformance = async (req, res) => {
     });
   }
 };
+
+// LIST API (machine_no + status only)
+export const getMachineStatusList = async (req, res) => {
+  try {
+    const sql = `
+      SELECT machine_no, status
+      FROM machine_performance
+    `;
+
+    const [rows] = await db.query(sql);
+
+    return res.status(200).json({
+      success: true,
+      count: rows.length,
+      data: rows
+    });
+
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: error.message
+    });
+  }
+};
