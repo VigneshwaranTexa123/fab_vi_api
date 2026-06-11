@@ -10,6 +10,6 @@ app.use(express.json());
 
 app.use("/api", machineRoutes);
 
-app.listen(5000, () => {
+app.listen(5000, '0.0.0.0', () => {
     console.log("Server Running On Port 5000");
 });
