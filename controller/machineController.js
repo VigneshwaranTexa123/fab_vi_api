@@ -41,7 +41,7 @@ export const getMachineStatusList = async (req, res) => {
   try {
     const sql = `
       SELECT machine_no, status
-      FROM machine_performance
+      FROM fab_vi.machine_performence
     `;
 
     const [rows] = await db.query(sql);
