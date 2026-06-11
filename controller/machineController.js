@@ -6,8 +6,7 @@ export const getMachinePerformance = async (req, res) => {
 
     const [rows] = await db.query(
       `
-      SELECT *
-      FROM machine_performance
+      SELECT * FROM fab_vi.machine_performence
       WHERE machine_no = ?
       `,
       [machine_no]
